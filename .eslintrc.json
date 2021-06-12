@@ -1,0 +1,105 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "airbnb-base",
+        "plugin:prettier/recommended",
+        "prettier",
+        "plugin:jasmine/recommended"
+      ],
+      "plugins": [
+        "prettier",
+        "jasmine"
+      ],
+      "env": {
+        "es6": true,
+        "browser": true,
+        "jasmine": true
+      },
+      "rules": {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+       ],
+       "no-unused-vars": ["warn"],
+       "no-empty-function": ["error", { "allow": ["constructors"] }],
+       "no-useless-constructor": "off",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/no-implied-eval": "off",
+        "@typescript-eslint/no-throw-literal": "off",
+        "strict": "off",
+        "import/first": "off",
+        "lines-around-directive": "off",
+        "import/prefer-default-export": "off",
+        "no-var": "error",
+        "semi": "error",
+        "indent": ["error", 2],
+        "no-multi-spaces": "error",
+        "space-in-parens": "error",
+        "no-multiple-empty-lines": "error",
+        "prefer-const": "error",
+        "no-use-before-define": "error",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ]
+      },
+      "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "rules": {
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/no-implied-eval": "off",
+        "@typescript-eslint/no-throw-literal": "off",
+        "strict": "off",
+        "import/first": "off",
+        "lines-around-directive": "off"
+      },
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ]
+    }
+  ]
+}
